@@ -1,8 +1,8 @@
 <?php
 require('./vendor/autoload.php');
 
-$dotenv = Dotenv\Dotenv::createImmutable(FCPATH);
-$dotenv->load(FCPATH . '.env');
+$dotenv = Dotenv\Dotenv::createImmutable('./');
+$dotenv->load('.env');
 
 $config['SHOPIFY_APP_HOST_NAME'] = 'furryfreshness.myshopify.com';
 $config['SHOPIFY_API_VERSION'] = '2021-04';
