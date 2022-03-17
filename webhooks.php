@@ -156,57 +156,63 @@ function graphql() {
     QUERY;
   }
 
+  $cartId = 'Z2lkOi8vc2hvcGlmeS9DYXJ0Lzc0ZmM5MTNkZTQwMTcwYWUwMjAzOGE1NDY0YjM3ZTQx'; // Storefront API
+  $cartId = 'Z2lkOi8vc2hvcGlmeS9DYXJ0L2M1YWFhNzNiNGZhNjFjNTVmYzkxZmRlMjY1MmJiYTI1'; // Web Cart
+
   $queryString = <<<QUERY
-  mutation {
-    cartCreate(
-      input: {
-        lines: [
-          {
-            quantity: 1
-            merchandiseId: "gid://shopify/ProductVariant/39764554481803"
-          }
-        ]
-        attributes: { key: "cart_attribute", value: "This is a cart attribute" }
-      }
+  query {
+    cart(
+      id: "Z2lkOi8vc2hvcGlmeS9DYXJ0Lzc0ZmM5MTNkZTQwMTcwYWUwMjAzOGE1NDY0YjM3ZTQx"
     ) {
-      cart {
-        id
-        createdAt
-        updatedAt
-        lines(first: 10) {
-          edges {
-            node {
-              id
-              merchandise {
-                ... on ProductVariant {
-                  id
-                }
+      id
+      createdAt
+      updatedAt
+      lines(first: 10) {
+        edges {
+          node {
+            id
+            quantity
+            merchandise {
+              ... on ProductVariant {
+                id
               }
+            }
+            attributes {
+              key
+              value
             }
           }
         }
-        attributes {
-          key
-          value
+      }
+      attributes {
+        key
+        value
+      }
+      estimatedCost {
+        totalAmount {
+          amount
+          currencyCode
         }
-        estimatedCost {
-          totalAmount {
-            amount
-            currencyCode
-          }
-          subtotalAmount {
-            amount
-            currencyCode
-          }
-          totalTaxAmount {
-            amount
-            currencyCode
-          }
-          totalDutyAmount {
-            amount
-            currencyCode
-          }
+        subtotalAmount {
+          amount
+          currencyCode
         }
+        totalTaxAmount {
+          amount
+          currencyCode
+        }
+        totalDutyAmount {
+          amount
+          currencyCode
+        }
+      }
+      buyerIdentity {
+        email
+        phone
+        customer {
+          id
+        }
+        countryCode
       }
     }
   }

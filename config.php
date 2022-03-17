@@ -6,7 +6,7 @@ $dotenv = Dotenv\Dotenv::createImmutable(FCPATH);
 $dotenv->load(FCPATH . '.env');
 
 $config['SHOPIFY_APP_HOST_NAME'] = 'furryfreshness.myshopify.com';
-$config['SHOPIFY_API_VERSION'] = '2021-04';
+$config['SHOPIFY_API_VERSION'] = '2022-01';
 
 Shopify\Context::initialize(
   $_ENV['SHOPIFY_API_KEY'],
