@@ -27,7 +27,8 @@ function _print_json_error($errorCode) {
 function checkouts_create() {
   $var_array = json_decode(file_get_contents("php://input"), true);
 
-  print_r($var_array);
+  error_log("Webhook Catched");
+  error_log(json_encode($var_array));
 }
 
 function register() {
@@ -87,7 +88,7 @@ function delete() {
  */
 function graphql() {
   global $config;
-  
+
   $storefrontClient = new Shopify\Clients\Storefront($config['SHOPIFY_APP_HOST_NAME'], '');
 
   $products = $storefrontClient->query(
