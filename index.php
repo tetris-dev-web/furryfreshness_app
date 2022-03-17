@@ -1,3 +1,10 @@
 <?php
-	echo "This is the heroku page";
+	echo "This is the heroku page<br>";
+	echo base64_decode('Z2lkOi8vc2hvcGlmeS9DYXJ0LzI5ZDQyNWZhMTQ1YTQ0ZWQ5ZGUyOTQ3YWMxMjhiMGM1');
+	echo "<BR>";
+	echo base64_decode('Z2lkOi8vc2hvcGlmeS9DaGVja291dC82OTNlODVlYmNlNWI2MmY5NDBlMmJmNDVmODJkYjBhOT9rZXk9ZGZhMzVlNjk5OTJhMTJhYWE4NGU4MDA5NTQ2ODI1MDk=');
+	echo "<BR>";
+	echo base64_encode('gid://shopify/ProductVariant/39764554481803');
+	echo "<BR>";
+	echo base64_encode('gid://shopify/Checkout/d491d669cdee4d00badb2b54b0206403?key=894fcbea7020dae4550230cdb3ffb892');
 ?>
