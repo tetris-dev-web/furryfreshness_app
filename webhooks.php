@@ -31,6 +31,7 @@ function checkouts_create() {
 }
 
 function register() {
+  global $config;
 
   $client = new Rest($config['SHOPIFY_APP_HOST_NAME'], '');
   $response = $client->post(
@@ -52,6 +53,8 @@ function register() {
 }
 
 function showlist() {
+  global $config;
+
   $client = new Rest($config['SHOPIFY_APP_HOST_NAME'], '');
   $response = $client->get(
     "webhooks"
@@ -65,6 +68,8 @@ function showlist() {
 }
 
 function delete() {
+  global $config;
+
   $client = new Rest($config['SHOPIFY_APP_HOST_NAME'], '');
   $response = $client->delete(
     "webhooks/" . $_GET['id']
@@ -81,7 +86,8 @@ function delete() {
  * Get Account List
  */
 function graphql() {
-
+  global $config;
+  
   $storefrontClient = new Shopify\Clients\Storefront($config['SHOPIFY_APP_HOST_NAME'], '');
 
   $products = $storefrontClient->query(
