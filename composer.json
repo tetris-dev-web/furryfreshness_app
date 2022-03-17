@@ -13,14 +13,14 @@
 	"require": {
 		"php": ">=5.3.7",
 		"shopify/shopify-api": "^1.0",
-		"vlucas/phpdotenv": "^5.4",
-		"heroku/heroku-buildpack-php": "^212.0"
+		"vlucas/phpdotenv": "^5.4"
 	},
 	"suggest": {
 		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
 	},
 	"require-dev": {
 		"mikey179/vfsstream": "1.1.*",
-		"phpunit/phpunit": "4.* || 5.*"
+		"phpunit/phpunit": "4.* || 5.*",
+		"heroku/heroku-buildpack-php": "^212.0"
 	}
 }
